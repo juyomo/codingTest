@@ -1,6 +1,13 @@
 코딩 테스트 합격자 되기 C++ - 1주차
 ===
 
+# Preamble, a ramble.
+
+Note to self.
+* Get the book!
+* Figure out syntax highlighting!
+* Fix some ... mediocre code..
+
 # 개념 문제
 
 1. DFS 를 구현하는 대표적인 두 가지 방법은 재귀 호출을 이용하는 것과 명시적인 스택 (Stack) 자료구조를 사용하는 것입니다. 각 구현 방식의 장단점을 비교 설명해주세요.
@@ -15,7 +22,7 @@
 
 Sorry.. I haven't gotten the book yet :'(
 
-## 네트워크
+## 네트워크 (Lv. 3)
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
 
@@ -66,13 +73,13 @@ Sorry.. I haven't gotten the book yet :'(
     }
 </details>
 
-## 양과 늑대
+## 양과 늑대 (Lv. 3)
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
 
 TODO
 
-## 전력망을 둘로 나누기
+## 전력망을 둘로 나누기 (Lv. 2)
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
 
@@ -145,7 +152,7 @@ TODO
     }
 </details>
 
-## 양궁 대회
+## 양궁 대회 (Lv. 2)
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
 
