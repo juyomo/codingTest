@@ -67,7 +67,84 @@ Sorry.. I haven't gotten the book yet :'(
     ```
 </details>
 
+
 ## [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
+
+## [전력망을 둘로 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
+
+<details>
+    <summary>It worked! it's not the most optimal, but out of time. Come back to this.</summary>
+    
+    ```cpp
+
+    #include <string>
+    #include <vector>
+    #include <queue>
+    #include <unordered_set>
+    #include <unordered_map>
+    #include <cmath>
+    
+    using namespace std;
+    
+    int calcMinDiff(int numNodes, const unordered_map<int, vector<int>>& nodes, const vector<int>& edgeToSkip) {
+        const int from = edgeToSkip[0];
+        const int to = edgeToSkip[1];
+        
+        queue<int> tovisit;
+        unordered_set<int> visited;
+        tovisit.push(1);
+        visited.insert(1);
+        
+        while (!tovisit.empty()) {
+            int curr = tovisit.front();
+            tovisit.pop();
+            
+            auto it = nodes.find(curr);
+            if (it != nodes.end()) {
+                const vector<int>& neighbors = it->second;
+                for (int n : neighbors) {
+                    if (visited.find(n) == visited.end() &&
+                       !((from == curr && to == n) || (from == n && to == curr))) {
+                        tovisit.push(n);
+                        visited.insert(n);
+                    }
+                }
+            }
+        }
+        
+        int res = numNodes - (2 * visited.size());
+        return abs(res);
+    }
+    
+    int solution(int numNodes, vector<vector<int>> wires) {
+        unordered_map<int, vector<int>> nodes; // node to a list of all of its neighbors
+        for (const auto& edge: wires) {
+            int from = edge[0];
+            int to = edge[1];
+            nodes[from].push_back(to);
+            nodes[to].push_back(from);
+        }
+        
+        int minDiff = numNodes;
+        
+        for (int i = 0; i < wires.size(); i++) {
+            int tmp = calcMinDiff(numNodes, nodes, wires[i]);
+            if (tmp == 0) {
+                return 0;
+            } else if (numNodes % 2 == 1 && tmp == 1) {
+                return 1;
+            }
+            if (tmp < minDiff) {
+                minDiff = tmp;
+            }
+        }
+        
+        return minDiff;
+    }
+    ```
+</details>
+
+## [양궁 대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
 
 <details>
     <summary>Attempt 1, which failed quite spectacularly. (Well, it passed for the first two test cases and then.. :P)</summary>
@@ -154,80 +231,4 @@ Sorry.. I haven't gotten the book yet :'(
     ```
 </details>
 
-## [전력망을 둘로 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
-
-<details>
-    <summary>It worked! it's not the most optimal, but out of time. Come back to this.</summary>
-    
-    ```cpp
-
-    #include <string>
-    #include <vector>
-    #include <queue>
-    #include <unordered_set>
-    #include <unordered_map>
-    #include <cmath>
-    
-    using namespace std;
-    
-    int calcMinDiff(int numNodes, const unordered_map<int, vector<int>>& nodes, const vector<int>& edgeToSkip) {
-        const int from = edgeToSkip[0];
-        const int to = edgeToSkip[1];
-        
-        queue<int> tovisit;
-        unordered_set<int> visited;
-        tovisit.push(1);
-        visited.insert(1);
-        
-        while (!tovisit.empty()) {
-            int curr = tovisit.front();
-            tovisit.pop();
-            
-            auto it = nodes.find(curr);
-            if (it != nodes.end()) {
-                const vector<int>& neighbors = it->second;
-                for (int n : neighbors) {
-                    if (visited.find(n) == visited.end() &&
-                       !((from == curr && to == n) || (from == n && to == curr))) {
-                        tovisit.push(n);
-                        visited.insert(n);
-                    }
-                }
-            }
-        }
-        
-        int res = numNodes - (2 * visited.size());
-        return abs(res);
-    }
-    
-    int solution(int numNodes, vector<vector<int>> wires) {
-        unordered_map<int, vector<int>> nodes; // node to a list of all of its neighbors
-        for (const auto& edge: wires) {
-            int from = edge[0];
-            int to = edge[1];
-            nodes[from].push_back(to);
-            nodes[to].push_back(from);
-        }
-        
-        int minDiff = numNodes;
-        
-        for (int i = 0; i < wires.size(); i++) {
-            int tmp = calcMinDiff(numNodes, nodes, wires[i]);
-            if (tmp == 0) {
-                return 0;
-            } else if (numNodes % 2 == 1 && tmp == 1) {
-                return 1;
-            }
-            if (tmp < minDiff) {
-                minDiff = tmp;
-            }
-        }
-        
-        return minDiff;
-    }
-    ```
-</details>
-
-
-## [양궁 대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
 
