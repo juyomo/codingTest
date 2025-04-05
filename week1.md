@@ -20,7 +20,7 @@ Sorry.. I haven't gotten the book yet :'(
 <details>
     <summary>Code</summary>
     
-    ```
+    
     #include <string>
     #include <vector>
     #include <unordered_set>
@@ -63,7 +63,7 @@ Sorry.. I haven't gotten the book yet :'(
         }
         return ans;
     }
-    ```
+    
 </details>
 
 
