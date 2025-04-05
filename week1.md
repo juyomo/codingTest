@@ -15,7 +15,9 @@
 
 Sorry.. I haven't gotten the book yet :'(
 
-## 네트워크 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
+## 네트워크
+
+[Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
 
 <details>
     <summary>Code</summary>
@@ -64,11 +66,15 @@ Sorry.. I haven't gotten the book yet :'(
     }
 </details>
 
-## 양과 늑대 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
+## 양과 늑대
+
+[Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
 
 TODO
 
-## 전력망을 둘로 나누기 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
+## 전력망을 둘로 나누기
+
+[Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
 
 <details>
     <summary>It worked! it's not the most optimal, but out of time. Come back to this.</summary>
@@ -139,7 +145,9 @@ TODO
     }
 </details>
 
-## 양궁 대회 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
+## 양궁 대회
+
+[Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
 
 <details>
     <summary>Attempt 1, which failed quite spectacularly. (Well, it passed for the first two test cases and then.. :P)</summary>
