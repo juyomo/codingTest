@@ -20,8 +20,7 @@ Sorry.. I haven't gotten the book yet :'(
 <details>
     <summary>Code</summary>
     
-    ```cpp
-    
+    ```
     #include <string>
     #include <vector>
     #include <unordered_set>
@@ -75,8 +74,7 @@ Sorry.. I haven't gotten the book yet :'(
 <details>
     <summary>It worked! it's not the most optimal, but out of time. Come back to this.</summary>
     
-    ```cpp
-
+    ```
     #include <string>
     #include <vector>
     #include <queue>
@@ -149,8 +147,7 @@ Sorry.. I haven't gotten the book yet :'(
 <details>
     <summary>Attempt 1, which failed quite spectacularly. (Well, it passed for the first two test cases and then.. :P)</summary>
     
-    ```cpp
-    
+    ```
     #include <string>
     #include <vector>
     #include <cmath>
