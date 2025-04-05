@@ -8,6 +8,8 @@ Note to self.
 * Figure out syntax highlighting!
 * Fix some ... mediocre code..
 
+I've got a loooong way to go :')
+
 # 개념 문제
 
 1. DFS 를 구현하는 대표적인 두 가지 방법은 재귀 호출을 이용하는 것과 명시적인 스택 (Stack) 자료구조를 사용하는 것입니다. 각 구현 방식의 장단점을 비교 설명해주세요.
