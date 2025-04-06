@@ -12,18 +12,24 @@ I've got a loooong way to go :')
 
 # 개념 문제
 
-1. DFS 를 구현하는 대표적인 두 가지 방법은 재귀 호출을 이용하는 것과 명시적인 스택 (Stack) 자료구조를 사용하는 것입니다. 각 구현 방식의 장단점을 비교 설명해주세요.
+## 1.
+
+DFS 를 구현하는 대표적인 두 가지 방법은 재귀 호출을 이용하는 것과 명시적인 스택 (Stack) 자료구조를 사용하는 것입니다. 각 구현 방식의 장단점을 비교 설명해주세요.
 
 | Recursion | stack |
 | --------- | ----- |
 | - code is simpler | - code is less intuitive |
 | - Function calls get stacked on the stack in memory, so not as ideal for large graphs where searches might go deep. (Stack overflow) | - More suitable for larger graphs. Also allows for more control/manipulation of the stack during the iterative process. |
 
-2. 방향그래프 (Directed Graph) 에서 사이클 (Cycle) 존재 여부를 판별하기 위해 DFS 를 어떻게 활용할 수 있는지 구체적인 알고리즘을 설명해주세요.
+## 2.
+
+방향그래프 (Directed Graph) 에서 사이클 (Cycle) 존재 여부를 판별하기 위해 DFS 를 어떻게 활용할 수 있는지 구체적인 알고리즘을 설명해주세요.
 
 - Keep track of visited nodes (e.g. in an unordered_set) and if we come across a node (that is currently in our traversal path) that also belongs to the visited node, we have a cycle!
 
-3. 재귀를 활용한 DFS 에서 가장 최근의 노드로 돌아가는 백트래킹 동작이 어떤 방식으로 동작하는지 하나의 예를 들어 설명해주세요.
+## 3.
+
+재귀를 활용한 DFS 에서 가장 최근의 노드로 돌아가는 백트래킹 동작이 어떤 방식으로 동작하는지 하나의 예를 들어 설명해주세요.
 
 - The following is code to get all the subsets of a given array. When we call the recursive function (e.g. `subsetRecur`), it's like creating a child node -- make the next decision. Then when that function returns, we are coming back to the parent node that called the function. 
 
