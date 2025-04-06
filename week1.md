@@ -16,8 +16,8 @@ I've got a loooong way to go :')
 
 | Recursion | stack |
 | --------- | ----- |
-| * code is simpler |  |
-| * Function calls get stacked on the stack in memory, so not as ideal for large graphs where searches might go deep. (Stack overflow) | |
+| - code is simpler | - code is less intuitive |
+| - Function calls get stacked on the stack in memory, so not as ideal for large graphs where searches might go deep. (Stack overflow) | - More suitable for larger graphs. Also allows for more control/manipulation of the stack during the iterative process. |
 
 2. 방향그래프 (Directed Graph) 에서 사이클 (Cycle) 존재 여부를 판별하기 위해 DFS 를 어떻게 활용할 수 있는지 구체적인 알고리즘을 설명해주세요.
 
