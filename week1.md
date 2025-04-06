@@ -60,7 +60,9 @@ vector<vector<int> > subsets(vector<int>& arr) {
 
 ## 깊이 우선 탐색 순회 (몸 풀기 문제)
 
-Sorry.. I haven't gotten the book yet :'(
+백준 13023 [Link to Problem](https://www.acmicpc.net/problem/13023)
+
+TODO
 
 ## 네트워크 (Lv. 3)
 
