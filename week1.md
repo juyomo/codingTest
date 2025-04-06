@@ -21,9 +21,34 @@ I've got a loooong way to go :')
 
 2. 방향그래프 (Directed Graph) 에서 사이클 (Cycle) 존재 여부를 판별하기 위해 DFS 를 어떻게 활용할 수 있는지 구체적인 알고리즘을 설명해주세요.
 
-Keep track of visited nodes (e.g. in an unordered_set) and if we come across a node (that is currently in our traversal path) that also belongs to the visited node, we have a cycle!
+- Keep track of visited nodes (e.g. in an unordered_set) and if we come across a node (that is currently in our traversal path) that also belongs to the visited node, we have a cycle!
 
 3. 재귀를 활용한 DFS 에서 가장 최근의 노드로 돌아가는 백트래킹 동작이 어떤 방식으로 동작하는지 하나의 예를 들어 설명해주세요.
+
+- The following is code to get all the subsets of a given array. When we call the recursive function (e.g. `subsetRecur`), it's like creating a child node -- make the next decision. Then when that function returns, we are coming back to the parent node that called the function. 
+
+```
+void subsetRecur(int i, const vector<int>& arr, vector<vector<int>>& res, vector<int>& subset) {
+
+    if (i == arr.size()) {
+        res.push_back(subset);
+        return;
+    }
+    
+    subset.push_back(arr[i]);
+    subsetRecur(i+1, arr, res, subset);
+    
+    subset.pop_back();
+    subsetRecur(i+1, arr, res, subset);
+}
+
+vector<vector<int> > subsets(vector<int>& arr) {
+    vector<int> subset;
+    vector<vector<int>> res;
+    subsetRecur(0, arr, res, subset);
+    return res;
+}
+```
 
 # 풀어볼 문제
 
