@@ -62,6 +62,8 @@ vector<vector<int> > subsets(vector<int>& arr) {
 
 백준 13023 [Link to Problem](https://www.acmicpc.net/problem/13023)
 
+TODO: Also do it recursively. (Just did it iteratively for now.)
+
 <details>
     <summary>Code</summary>
     
