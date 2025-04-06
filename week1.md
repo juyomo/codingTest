@@ -62,7 +62,57 @@ vector<vector<int> > subsets(vector<int>& arr) {
 
 백준 13023 [Link to Problem](https://www.acmicpc.net/problem/13023)
 
-TODO
+<details>
+    <summary>Code</summary>
+    
+    #include <iostream>
+    #include <unordered_map>
+    #include <unordered_set>
+    #include <stack>
+    
+    using namespace std;
+    
+    typedef unordered_set<int> Path;
+    
+    int main() {
+        int n, e;
+        cin >> n >> e;
+        unordered_map<int, unordered_set<int>> nodes;
+        
+        for (int i = 0; i < e; i++) {
+            int a, b;
+            cin >> a >> b;
+            nodes[a].insert(b);
+            nodes[b].insert(a);
+        }
+        
+        for (int startNode = 0; startNode < n; startNode++) {
+            stack<pair<int, Path>> tovisit;
+            Path path{startNode};
+            tovisit.push(make_pair(startNode, path));
+    
+            while (!tovisit.empty()) {
+                pair<int, Path> curr = tovisit.top();
+                tovisit.pop();
+        
+                Path currPath = curr.second;
+                currPath.insert(curr.first);
+                if (currPath.size() == 5) {
+                    cout << 1 << endl;
+                    return 0;
+                }
+    
+                for (int neighbor : nodes[curr.first]) {
+                    if (currPath.find(neighbor) == currPath.end()) {
+                        tovisit.push(make_pair(neighbor, currPath));
+                    }
+                }
+            }
+        }
+    
+        cout << 0 << endl;    
+    }
+</details>
 
 ## 네트워크 (Lv. 3)
 
