@@ -333,5 +333,82 @@ TODO
 </details>
 
 <details>
-    <summary>Attempt 2. TODO</summary>
+    <summary>Attempt 2. It worked!</summary>
+
+    #include <string>
+    #include <vector>
+    #include <cmath>
+    #include <iostream>
+    #include <algorithm>
+    using namespace std;
+
+    void recur(const vector<int>& opponentArrows, vector<vector<int>>& res, vector<int> curr, int arrowsRemaining, int idx, int currScore) {
+        if (idx == 10) {
+            if (currScore > 0) {
+                curr[10] = arrowsRemaining;
+                curr[11] = currScore;
+                res.push_back(curr);
+            }
+            return;
+        }
+        
+        // POSSIBILITY 1. Don't shoot arrows this round! (me = 0)
+        // - we both shoot 0 and 0. nobody gets score for this round.
+        // - opponent shoots >0, I shoot nothing. opponent takes this round
+        curr[idx] = 0;
+        int nextScore = currScore;
+        if (opponentArrows[idx] > 0) {
+            nextScore = currScore - (10 - idx);
+        }
+        recur(opponentArrows, res, curr, arrowsRemaining, idx + 1, nextScore);
+        
+        // POSSIBILITY 2. Shoot 1 more arrow than opponent this round!
+        int arrowToUse = opponentArrows[idx] + 1;
+        if (arrowToUse <= arrowsRemaining) {
+            curr[idx] = arrowToUse;
+            recur(opponentArrows, res, curr, arrowsRemaining - arrowToUse, idx + 1, currScore + (10-idx));
+        }
+    }
+
+    bool compare(const vector<int>& a, const vector<int>& b) {
+        for (int i = 10; i >= 0; i--) {
+            if (a[i] > b[i]) { return true; }
+            else if (a[i] < b[i]) { return false; }
+        }
+        return true;
+    }
+
+    vector<int> solution(int n, vector<int> info) {
+        bool print = false;
+        vector<vector<int>> res;
+        vector<int> currChoice(12, 0);
+        
+        // Meat of the code. Backtracking!
+        recur(info, res, currChoice, n, 0, 0);
+        
+        // Now find the candidates with max score...
+        int maxScore = -1;
+
+        for (int i = 0; i < res.size(); i++) {
+            if (res[i][11] > maxScore) {
+                maxScore = res[i][11];
+            }
+        }
+        
+        if (maxScore == -1) {
+            return {-1};
+        }
+        
+        // Among the candidates, return the one that had more arrows that hit the lower points.
+        vector<vector<int>> candidates;
+        for (int i = 0; i < res.size(); i++) {
+            if (res[i][11] == maxScore) {
+                candidates.push_back(res[i]);
+            }
+        }
+        
+        sort(candidates.begin(), candidates.end(), compare);
+        candidates[0].pop_back();
+        return candidates[0];
+    }
 </details>
