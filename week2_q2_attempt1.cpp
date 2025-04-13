@@ -1,3 +1,6 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/1844
+// 게임 맵 최단거리 attempt 1.
+
 // 시간초과 남.
 
 #include <vector>
@@ -33,14 +36,6 @@ struct location {
         return (r >= 0 && r < height && c >= 0 && c < width);
     }
 };
-
-int findMin(int a, int b, int c, int d) {
-    int res = a;
-    if (b < res) { res = b; }
-    if (c < res) { res = c; }
-    if (d < res) { res = d; }
-    return res;
-}
 
 int solution(vector<vector<int>> map) {
     int height = map.size();
