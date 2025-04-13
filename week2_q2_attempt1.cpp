@@ -1,7 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/1844
 // 게임 맵 최단거리 attempt 1.
 
-// 시간초과 남.
+// 효율성 테스트 1에서만 시간초과 남.
 
 #include <vector>
 #include <limits.h>
@@ -22,13 +22,12 @@ struct location {
     
     vector<location> getNeighbors() {
         vector<location> nghbrs;
-        /*
-        int dx[4] = {1, -1, 0, 0};
-        int dy[4] = {0, 0, 1, -1};*/
+        
         nghbrs.push_back(location(r, c+1, distance+1));
         nghbrs.push_back(location(r, c-1, distance+1));
         nghbrs.push_back(location(r+1, c, distance+1));
         nghbrs.push_back(location(r-1, c, distance+1));
+        
         return nghbrs;
     }
     
