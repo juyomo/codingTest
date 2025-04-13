@@ -17,12 +17,20 @@ _BFS 알고리즘의 시간 복잡도는 O(V+E)인데, 그래프의 형태(예: 
 
 # 실전 문제
 
-## 너비 우선 탐색 순회(몸풀기 문제 37번)
+## Q1. 너비 우선 탐색 순회(몸풀기 문제 37번)
 
-## 게임 맵 최단거리
+## Q2. 게임 맵 최단거리
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/1844)
 
-## 경주로 건설
+[Attempt 1.](week2_q2_attempt1.cpp)
+
+시간초과.
+
+## Q3. 경주로 건설
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
+
+[Attempt 1.](week2_q3_attempt1.cpp)
+
+테케 #4 틀림.
