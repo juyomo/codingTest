@@ -41,6 +41,10 @@ If you have a 밀집 그래프, you have more edges for the same number of nodes
 
 효율성 테스트 1만 시간초과.
 
+[Attempt 2.](week2_q2_attempt2.cpp)
+
+Passed!
+
 ## Q3. 경주로 건설
 
 [Link to Problem](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
