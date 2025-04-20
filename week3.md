@@ -19,5 +19,7 @@ _백트래킹 알고리즘의 시간 복잡도는 일반적으로 어떻게 표�
 
 ## [피로도](https://school.programmers.co.kr/learn/courses/30/lessons/87946)
 
+[Ans](tiredness.cpp)
+
 ## [N-퀸](https://school.programmers.co.kr/learn/courses/30/lessons/12952)
 
