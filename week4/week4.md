@@ -12,6 +12,7 @@
 ## 이진 변환 반복하기
 
 [Q](https://school.programmers.co.kr/learn/courses/30/lessons/70129)
+
 [Answer](q1_binary_transformation.cpp)
 
 ## 캐릭터의 좌표
